@@ -1,0 +1,9 @@
+#user_generic_summary_div {
+    height: 45vh;
+    width: 70%;
+    margin-left: 15%;
+    border-radius: 2vh;
+    border: 0.5vh solid white;
+    background-color: #d0d0d0;
+    margin-top: 10vh;
+}

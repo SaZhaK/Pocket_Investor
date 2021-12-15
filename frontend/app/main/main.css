@@ -1,0 +1,82 @@
+#main_information {
+    border-spacing: 10px;
+    border-radius: 10px;
+    background-color: #edf0f0;
+    width: 90%;
+    height: 75vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+#main_header_div {
+    height: 10vh;
+    width: 100%;
+}
+
+#main_header {
+    position: absolute;
+    margin-top: 1vh;
+    height: 6vh;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 2vh;
+    border: 0.5vh solid white;
+    background-color: #d0d0d0;
+    text-align: center;
+    padding-bottom: 2vh;
+}
+
+#main_graph_icon {
+    width: 30vh;
+    height: 30vh;
+    margin-top: 3vh;
+    margin-left: 2vh;
+}
+
+#main_text_div {
+    height: 35vh;
+    width: 100%;
+}
+
+#main_text {
+    position: absolute;
+    margin-top: 2vh;
+    width: 70%;
+    margin-left: 20%;
+    border-radius: 2vh;
+    border: 0.5vh solid white;
+    background-color: #d0d0d0;
+    text-align: left;
+    padding-bottom: 2vh;
+    padding-left: 2vh;
+    padding-right: 1vh;
+    font: 2.2vh serif;
+}
+
+#main_umbrella_icon {
+    width: 23vh;
+    height: 23vh;
+    margin-top: 1vh;
+    margin-left: 145vh;
+}
+
+#main_instruction_div {
+    height: 25vh;
+    width: 100%;
+}
+
+#main_instruction {
+    font: 2.2vh serif;
+    position: absolute;
+    margin-top: 2vh;
+    height: 19vh;
+    width: 70%;
+    margin-left: 5%;
+    border-radius: 2vh;
+    border: 0.5vh solid white;
+    background-color: #d0d0d0;
+    text-align: left;
+    padding-bottom: 2vh;
+    padding-left: 2vh;
+    padding-top: 1vh;
+}

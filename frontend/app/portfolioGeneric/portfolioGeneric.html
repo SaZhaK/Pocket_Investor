@@ -1,0 +1,65 @@
+<div ng-controller="PortfolioGenericCtrl">
+    <div id="user_info">
+        <b>Портфель пользователя:</b> {{ username }}
+        <br>
+        <button id="user_link_btn" ng-click="openProfile()" class="trade_input" type="text">Смотреть профиль</button>
+    </div>
+
+    <div id="pie_chart_row">
+
+        <div id="portfolio_summary_div">
+            <table id="portfolio_summary">
+                <tr>
+                    <td style="font-weight: bold">Суммарная стоимость портфеля:</td>
+                    <td>{{totalPortfolioPrice}} </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold">Суммарная прибыль/убыток:</td>
+                    <td>{{totalDelta}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold">Суммарно внесено на счёт:</td>
+                    <td>{{totalInvested}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="bar_chart_div">
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div id="pie_chart_div">
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+
+    <div id="shares_table_edit_button_div">
+    </div>
+
+    <table id="shares_table_generic">
+        <tr>
+            <th>Актив</th>
+            <th>Количество</th>
+            <th>Средняя цена покупки</th>
+            <th>Вложено</th>
+            <th>Текущая стоимость</th>
+            <th>Дельта</th>
+            <th>Дельта в %</th>
+            <th>Доля в портфеле в %</th>
+        </tr>
+        <tr ng-repeat="trade in trades">
+            <td>{{ trade.ticker }}</td>
+            <td>{{ trade.amount }}</td>
+            <td>{{ trade.averagePrice }}</td>
+            <td>{{ trade.invested }}</td>
+            <td>{{ trade.currentPrice }}</td>
+            <td ng-style="{'font-weight': (trade.delta != 'загрузка...' ? 'bold' : ''),
+            'color': trade.delta == 'загрузка...' ? 'black' : (trade.delta > 0 ? 'green': 'red')}">{{ trade.delta }}</td>
+            <td ng-style="{'font-weight': (trade.deltaPercent != 'загрузка...' ? 'bold' : ''),
+            'color': trade.deltaPercent == 'загрузка...' ? 'black' : (trade.deltaPercent > 0 ? 'green': 'red')}">
+                {{ trade.deltaPercent }}
+            </td>
+            <td>{{ trade.percentage }}</td>
+        </tr>
+    </table>
+</div>

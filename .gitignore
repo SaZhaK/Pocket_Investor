@@ -1,0 +1,5 @@
+# Project exclude paths
+/domain/target/
+/endpoint/target/
+/entity/target/
+/service/target/

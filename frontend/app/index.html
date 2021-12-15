@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="pocketInvestor" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="pocketInvestor" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="pocketInvestor" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="pocketInvestor" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pocket investor</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="portfolio/portfolio.css">
+    <link rel="stylesheet" href="portfolioList/portfolioList.css">
+    <link rel="stylesheet" href="portfolioGeneric/portfolioGeneric.css">
+    <link rel="stylesheet" href="user/user.css">
+    <link rel="stylesheet" href="userGeneric/userGeneric.css">
+    <link rel="stylesheet" href="login/login.css">
+    <link rel="stylesheet" href="callback/callback.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+<table id="menu">
+    <tr>
+        <th>
+            <a href="#!/main">
+                <div>Главная</div>
+            </a>
+        </th>
+        <th>
+            <a href="#!/portfolioList">
+                <div>Инвестиционные идеи</div>
+            </a>
+        </th>
+        <th>
+            <a href="#!/portfolio">
+                <div>Мой портфель</div>
+            </a>
+        </th>
+        <th>
+            <a href="#!/user">
+                <div>Личный кабинет</div>
+            </a>
+        </th>
+    </tr>
+</table>
+
+<div ng-view></div>
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="login/login.js"></script>
+<script src="callback/callback.js"></script>
+<script src="home/home.js"></script>
+<script src="main/main.js"></script>
+<script src="portfolio/portfolio.js"></script>
+<script src="portfolioList/portfolioList.js"></script>
+<script src="portfolioGeneric/portfolioGeneric.js"></script>
+<script src="user/user.js"></script>
+<script src="userGeneric/userGeneric.js"></script>
+<script src="core/version/version.js"></script>
+<script src="core/version/version-directive.js"></script>
+<script src="core/version/interpolate-filter.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</body>
+</html>

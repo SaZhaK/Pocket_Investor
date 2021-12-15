@@ -1,0 +1,25 @@
+#login_div {
+    margin-top: 10vh;
+}
+
+#login_block {
+    border-radius: 2vh;
+    height: 30vh;
+    width: 100vh;
+    margin: 0 auto;
+    background-color: #edf0f0;
+}
+
+#github_login_button {
+    margin-top:  3vh;
+    margin-left: 39vh;
+    width: 20vh;
+    height: 20vh;
+}
+
+#enter_text {
+    padding-top: 2vh;
+    margin-left: 12vh;
+    font: 3vh serif;
+    width: 80vh;
+}

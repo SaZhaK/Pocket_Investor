@@ -1,0 +1,122 @@
+#user_information {
+    border-spacing: 10px;
+    border-radius: 10px;
+    background-color: #edf0f0;
+    width: 90%;
+    height: 75vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+#user_central_block {
+    width: 100%;
+    height: 65vh;
+    margin-top: 5vh;
+    position: absolute;
+}
+
+#user_avatar {
+    float: left;
+    position: relative;
+    margin-left: 5vh;
+    margin-top: 5vh;
+    width: 55vh;
+    height: 55vh;
+}
+
+#user_edit_button_div {
+    width: 100%;
+    height: 5vh;
+    margin-top: 5vh;
+}
+
+#user_double_button_div {
+    margin-left: 153vh;
+}
+
+#user_edit_button {
+    width: 5vh;
+    height: 5vh;
+    float: left;
+}
+
+#logout_button {
+    width: 5vh;
+    height: 5vh;
+    float: left;
+    margin-left: 1vh;
+}
+
+#user_summary_div {
+    height: 45vh;
+    width: 70%;
+    margin-left: 15%;
+    border-radius: 2vh;
+    border: 0.5vh solid white;
+    background-color: #d0d0d0;
+}
+
+#user_summary {
+    width: 60%;
+    height: 45vh;
+    border-collapse: collapse;
+}
+
+#user_summary tr {
+    line-height: 1vh;
+}
+
+#user_summary tr td {
+    padding: 0;
+    letter-spacing: 0.2vh;
+    text-align: left;
+}
+
+#user_summary tr td input {
+    width: 20vh;
+    height: 3vh;
+    background-color: #d0d0d0;
+    outline: none;
+    border: 0.3vh solid white;
+    border-radius: 2vh;
+    font: bold 2vh serif;
+    color: black;
+    padding-left: 1vh;
+}
+
+#user_summary tr td input:disabled {
+    border: 0 none;
+}
+
+#user_summary tr td input:focus {
+    font: bold 2vh serif;
+    color: black;
+    background-color: #b9b9b9;
+}
+
+#user_save_button_div {
+    width: 100%;
+    height: 10vh;
+}
+
+#user_save_button {
+    margin-left: 73vh;
+    margin-top: 1vh;
+    width: 20vh;
+    height: 5vh;
+    visibility: hidden;
+    border-radius: 10px;
+    background-color: #d0d0d0;
+    border: 0.5vh solid white;
+    font: 3vh serif;
+    color: black;
+}
+
+#user_save_button:hover {
+    background-color: #b9b9b9;
+}
+
+.user_summary_label {
+    font: bold 2vh serif;
+    color: black;
+}

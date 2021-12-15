@@ -1,0 +1,57 @@
+#shares_table_generic {
+    background-color: #edf0f0;
+    margin-left: 15vh;
+    margin-bottom: 5vh;
+    width: 85%;
+    border-collapse: collapse;
+}
+
+#shares_table_generic tr th, td {
+    padding: 2vh;
+    letter-spacing: 0.3vh;
+    text-align: center;
+    font: 2vh serif;
+}
+
+#shares_table_generic tr th {
+    font: bold 2vh serif;
+}
+
+#shares_table_generic tr td {
+    font: 2vh serif;
+}
+
+#user_info {
+    display: table;
+    table-layout: fixed;
+    border-spacing: 2vh;
+    border-radius: 2vh;
+    background-color: #edf0f0;
+    width: 30%;
+    height: 10vh;
+    margin: 2vh auto;
+    font: 2.5vh serif;
+    text-align: center;
+}
+
+#user_link_btn {
+    width: 30vh;
+    height: 4vh;
+    background-color: #edf0f0;
+    outline: none;
+    border: 0.4vh solid white;
+    border-radius: 2vh;
+    color: black;
+    text-align: center;
+    padding: 0.2vh;
+}
+
+#user_link_btn:focus {
+    color: black;
+    background-color: #d0d0d0;
+}
+
+#user_link_btn:hover {
+    color: black;
+    background-color: #d0d0d0;
+}
