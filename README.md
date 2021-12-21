@@ -12,39 +12,39 @@ Pocket Investor
 
 ## Данные:
 
-- Сущность portfolio (портфель пользователя)
-id - serial not null primary key
-total_cost             float (> 0),
-delta                 float (> 0),
-delta_percentage       float (> 0)
+- Сущность portfolio (портфель пользователя)<br>
+id - serial not null primary key<br>
+total_cost             float (> 0)<br>
+delta                 float (> 0)<br>
+delta_percentage       float (> 0)<br>
 
-- Сущность user (пользователь)
-id - serial not null primary key,
-name - varchar(256),
-surname - varchar(256),
-age - bigint,
-gender - bigint,
-education - varchar(256),
-qualified_investor_status - boolean,
-registration_date - timestamp not null,
-portfolio_id - bigint foreign key portfolio (id),
-github_login - varchar(256) not null,
+- Сущность user (пользователь)<br>
+id - serial not null primary key<br>
+name - varchar(256)<br>
+surname - varchar(256)<br>
+age - bigint<br>
+gender - bigint<br>
+education - varchar(256)<br>
+qualified_investor_status - boolean<br>
+registration_date - timestamp not null<br>
+portfolio_id - bigint foreign key portfolio (id)<br>
+github_login - varchar(256) not null<br>
 
-- Сущность asset (ценный актив)
-id - serial not null  primary key,
-ticker - varchar(256) not null unique,
-last_price - float not null ( > 0),
-last_time - timestamp not null
+- Сущность asset (ценный актив)<br>
+id - serial not null  primary key<br>
+ticker - varchar(256) not null unique<br>
+last_price - float not null ( > 0)<br>
+last_time - timestamp not null<br>
 
-- Сущность trade (сделка)
-id - serial not null  primary key,
-asset_id - bigint not null foreign key asset (id),
-amount - bigint ( > 0),
-price - float (> 0),
+- Сущность trade (сделка)<br>
+id - serial not null  primary key<br>
+asset_id - bigint not null foreign key asset (id)<br>
+amount - bigint ( > 0)<br>
+price - float (> 0)<br>
 
-- Связующая таблица отношения один ко многим portfolio_trades для сущностей “Портфель” и “Сделка”
-portfolio_id - bigint, foreign key portfolio (id)
-trades_id - bigint foreign key trade (id),
+- Связующая таблица отношения один ко многим portfolio_trades для сущностей “Портфель” и “Сделка”<br>
+portfolio_id - bigint, foreign key portfolio (id)<br>
+trades_id - bigint foreign key trade (id)<br>
 
 
 ## Общие ограничения целостности:
@@ -52,12 +52,12 @@ trades_id - bigint foreign key trade (id),
 
 ## Пользовательские роли:
 
-## Посетитель
-Имеет возможность ознакомления с описанием и инструкцией использования сайта, а также возможность просмотра портфелей пользователей, зарегистрированных в системе. Может авторизоваться в системе при помощи аккаунта GitHub.
+- ###Посетитель<br>
+Имеет возможность ознакомления с описанием и инструкцией использования сайта, а также возможность просмотра портфелей пользователей, зарегистрированных в системе. Может авторизоваться в системе при помощи аккаунта GitHub.<br>
 Количество посетителей в системе не ограничено.
 
-## Пользователь
-Имеет возможность обновления собственного инвестиционного портфеля и персональной информации, а также просмотра портфелей других пользователей. Не имеет возможности редактирования портфелей других пользователей и их личной информации. 
+- ###Пользователь<br>
+Имеет возможность обновления собственного инвестиционного портфеля и персональной информации, а также просмотра портфелей других пользователей. Не имеет возможности редактирования портфелей других пользователей и их личной информации.<br> 
 Количество пользователей в системе ограничено размером базы данных.
 
 ## UI/API:
