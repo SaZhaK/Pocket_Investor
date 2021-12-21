@@ -22,6 +22,9 @@
     <DATA>
         <ENTITY ent_id="portfolio">
             <PROPERTY>id</PROPERTY>
+            <PROPERTY>total_cost</PROPERTY>
+            <PROPERTY>delta</PROPERTY>
+            <PROPERTY>delta_percentage</PROPERTY>
         </ENTITY>
         <ENTITY ent_id="users">
             <PROPERTY>id</PROPERTY>
@@ -112,10 +115,10 @@
             <TITLE>PostgreSQL</TITLE>
             <VERSION>10.19</VERSION>
             <REASONING>
-                Широкий спектр типов данных
-                Увеличенные максимальные размеры баз, таблиц и полей по сравнению с другими СУБД
-                Поддержка check ограничений
-                Более медленный доступ к данным, но улучшенная поддержка целостности
+                1. Широкий спектр типов данных
+                2. Увеличенные максимальные размеры баз, таблиц и полей по сравнению с другими СУБД
+                3. Поддержка check ограничений
+                4. Более медленный доступ к данным, но улучшенная поддержка целостности
             </REASONING>
         </DBMS>
     </TECHSPEC>
