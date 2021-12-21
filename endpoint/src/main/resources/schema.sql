@@ -1,6 +1,9 @@
 create table if not exists portfolio
 (
-  id                    serial not null primary key
+  id                    serial not null primary key,
+  total_cost             float check (total_cost > 0),
+  delta                 float check (delta > 0),
+  delta_percentage       float check (delta_percentage > 0)
 );
 
 create table if not exists users

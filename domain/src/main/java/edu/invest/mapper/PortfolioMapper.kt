@@ -11,11 +11,16 @@ class PortfolioMapper @Autowired constructor(
 ) {
     fun mapToEntity(portfolioDto: PortfolioDto): Portfolio {
         val trades = portfolioDto.trades?.map(tradeMapper::mapToEntity)?.toList()
-        return Portfolio(portfolioDto.id, trades)
+        return Portfolio(
+                portfolioDto.id,
+                portfolioDto.totalCost,
+                portfolioDto.delta,
+                portfolioDto.deltaPercentage,
+                trades)
     }
 
     fun mapToDto(portfolio: Portfolio): PortfolioDto {
         val trades = portfolio.trades?.map(tradeMapper::mapToDto)?.toList()
-        return PortfolioDto(portfolio.id, trades = trades)
+        return PortfolioDto(portfolio.id, portfolio.totalCost, portfolio.delta, portfolio.deltaPercentage, trades)
     }
 }
