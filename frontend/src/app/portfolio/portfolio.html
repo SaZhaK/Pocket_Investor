@@ -1,0 +1,85 @@
+<div ng-controller="PortfolioCtrl">
+    <div id="pie_chart_row">
+
+        <div id="portfolio_summary_div">
+            <table id="portfolio_summary">
+                <tr>
+                    <td style="font-weight: bold">Суммарная стоимость портфеля:</td>
+                    <td>{{totalPortfolioPrice}} </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold">Суммарная прибыль/убыток:</td>
+                    <td>{{totalDelta}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold">Суммарно внесено на счёт:</td>
+                    <td>{{totalInvested}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="bar_chart_div">
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div id="pie_chart_div">
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+
+    <div id="shares_table_edit_button_div">
+        <input id="shares_table_edit_button" ng-click="editSharesTable()" type="image" src="../../assets/edit.png"/>
+    </div>
+
+    <table id="shares_table">
+        <tr>
+            <th>Актив</th>
+            <th>Количество</th>
+            <th>Средняя цена покупки</th>
+            <th>Вложено</th>
+            <th>Текущая стоимость</th>
+            <th>Дельта</th>
+            <th>Дельта в %</th>
+            <th>Доля в портфеле в %</th>
+            <th style="background-color: white;"></th>
+        </tr>
+        <form ng-controller="PortfolioCtrl">
+            <tr ng-repeat="trade in trades">
+                <td><input required ng-model="trade.ticker" class="trade_input" ng-disabled="disabled()" type="text"
+                           value="{{ trade.ticker }}"></td>
+                <td><input required ng-model="trade.amount" class="trade_input" ng-disabled="disabled()" type="text"
+                           value="{{ trade.amount }}"></td>
+                <td><input required ng-model="trade.averagePrice" class="trade_input" ng-disabled="disabled()"
+                           type="text" value="{{ trade.averagePrice }}"></td>
+                <td>{{ trade.invested }}</td>
+                <td>{{ trade.currentPrice }}</td>
+                <td ng-style="{'font-weight': (trade.delta != 'загрузка...' ? 'bold' : ''),
+            'color': trade.delta == 'загрузка...' ? 'black' : (trade.delta > 0 ? 'green': 'red')}">{{ trade.delta }}</td>
+                <td ng-style="{'font-weight': (trade.deltaPercent != 'загрузка...' ? 'bold' : ''),
+            'color': trade.deltaPercent == 'загрузка...' ? 'black' : (trade.deltaPercent > 0 ? 'green': 'red')}">
+                    {{ trade.deltaPercent }}
+                </td>
+                <td>{{ trade.percentage }}</td>
+                <td style="background-color: white;">
+                    <input class="delete_trade_btn" ng-style="{'visibility': disabled() ? 'hidden' : 'visible'}"
+                           ng-click="deleteTrade($index)" type="image"
+                           src="../../assets/delete_trade.png"/>
+                </td>
+            </tr>
+        </form>
+        <tr id="add_trade_row">
+            <td></td>
+            <td></td>
+            <td style="padding-left: 10vh">
+                <input id="add_trade_btn" ng-click="addTrade()" type="image"
+                       src="../../assets/trade_add.png"/>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>

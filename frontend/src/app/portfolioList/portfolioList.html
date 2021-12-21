@@ -1,0 +1,21 @@
+<div ng-controller="PortfolioListCtrl">
+    <table id="shares_table">
+        <tr>
+            <th>Пользователь</th>
+            <th>Суммарная стоимость портфеля</th>
+            <th>Суммарная прибыль/убыток</th>
+            <th>Суммарная прибыль/убыток в процентах</th>
+        </tr>
+        <tr ng-repeat="portfolio in portfolios">
+            <td> {{ portfolio.username }} </td>
+            <td> {{ portfolio.totalCost }} </td>
+            <td ng-style="{'font-weight': 'bold', 'color': portfolio.delta > 0 ? 'green': 'red'}">{{ portfolio.delta }}</td>
+            <td ng-style="{'font-weight': 'bold', 'color': portfolio.deltaPercentage > 0 ? 'green': 'red'}">
+                {{ portfolio.deltaPercentage }}
+            <td>
+                <input class="portfolio_eye" ng-click="openPortfolio(portfolio.userId)" type="image"
+                       src="../../assets/portfolio_eye.png"/>
+            </td>
+        </tr>
+    </table>
+</div>

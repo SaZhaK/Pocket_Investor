@@ -11,34 +11,70 @@
             его диверсификации по эмитентам и доходности.
             Помимо этого сервис предоставляет возможность просматривать портфели других пользователей системы,
             а также информацию об этих пользователях.
-            Сервис предоставляет возможность регистрации и авторизации пользователя в системе.
-            Данные о стоимости ценных бумаг в портфеле соответствуют данным,
-            представленным на Нью-Йоркской фондовой бирже,
+            Сервис предоставляет возможность регистрации и авторизации пользователя в системе при помощи аккаунта
+            GitHub.
+            Данные о стоимости ценных бумаг в портфеле соответствуют данным, представленным на Нью-Йоркской фондовой
+            бирже,
             однако в силу политики и тарифа API биржи допустимо некоторое отставание от данных в реальном времени.
         </SUBJ>
     </DESCRIPTION>
 
     <DATA>
-        <ENTITY ent_id="">
-            <PROPERTY>
-
-            </PROPERTY>
+        <ENTITY ent_id="portfolio">
+            <PROPERTY>id</PROPERTY>
         </ENTITY>
-        <RELATIONSHIP ent_id="">
-            <PROPERTY>
-
-            </PROPERTY>
+        <ENTITY ent_id="users">
+            <PROPERTY>id</PROPERTY>
+            <PROPERTY>name</PROPERTY>
+            <PROPERTY>surname</PROPERTY>
+            <PROPERTY>age</PROPERTY>
+            <PROPERTY>gender</PROPERTY>
+            <PROPERTY>education</PROPERTY>
+            <PROPERTY>qualified_investor_status</PROPERTY>
+            <PROPERTY>registration_date</PROPERTY>
+            <PROPERTY>portfolio_id</PROPERTY>
+            <PROPERTY>github_login</PROPERTY>
+        </ENTITY>
+        <ENTITY ent_id="asset">
+            <PROPERTY>id</PROPERTY>
+            <PROPERTY>ticker</PROPERTY>
+            <PROPERTY>last_price</PROPERTY>
+            <PROPERTY>last_time</PROPERTY>
+        </ENTITY>
+        <ENTITY ent_id="trade">
+            <PROPERTY>id</PROPERTY>
+            <PROPERTY>asset_id</PROPERTY>
+            <PROPERTY>amount</PROPERTY>
+            <PROPERTY>price</PROPERTY>
+        </ENTITY>
+        <ENTITY ent_id="portfolio_trades">
+            <PROPERTY>portfolio_id</PROPERTY>
+            <PROPERTY>trades_id</PROPERTY>
+        </ENTITY>
+        <RELATIONSHIP ent_id="portfolio trades">
+            <PROPERTY>one to many</PROPERTY>
         </RELATIONSHIP>
-        <CONSTRAINT>
 
-        </CONSTRAINT>
+        <CONSTRAINT>portfolio.id is not null and primary key</CONSTRAINT>
+        <CONSTRAINT>users.id is not nulland primary key</CONSTRAINT>
+        <CONSTRAINT>users.github_login is not null and unique</CONSTRAINT>
+        <CONSTRAINT>users.portfolio_id is not null and references portfolio.id</CONSTRAINT>
+        <CONSTRAINT>asset.id is not null and primary key</CONSTRAINT>
+        <CONSTRAINT>asset.ticker is not null and unique</CONSTRAINT>
+        <CONSTRAINT>asset.last_price is not null and > 0</CONSTRAINT>
+        <CONSTRAINT>asset.last_time is not null</CONSTRAINT>
+        <CONSTRAINT>trade.id is not null and primary key</CONSTRAINT>
+        <CONSTRAINT>trade.asset_id is not null and references asset.id</CONSTRAINT>
+        <CONSTRAINT>trade.asset_id is not null and references asset.id</CONSTRAINT>
+        <CONSTRAINT>trade.amount is > 0</CONSTRAINT>
+        <CONSTRAINT>trade.price is > 0</CONSTRAINT>
+        <CONSTRAINT>portfolio_trades.portfolio_id is not null and references portfolio.id</CONSTRAINT>
+        <CONSTRAINT>portfolio_trades.trades_id is not null and references trades.id</CONSTRAINT>
     </DATA>
 
     <ROLES>
         <ROLE>
-            <TITLE>
-                Посетитель
-            </TITLE>
+            <TITLE>Посетитель</TITLE>
             <RESPONSIBILITY>
                 Имеет возможность ознакомления с описанием и инструкцией использования сайта,
                 а также возможность просмотра портфелей пользователей, зарегистрированных в системе.
@@ -48,9 +84,7 @@
             </TOTALUSERS>
         </ROLE>
         <ROLE>
-            <TITLE>
-                Пользователь
-            </TITLE>
+            <TITLE>Пользователь</TITLE>
             <RESPONSIBILITY>
                 Имеет возможность обновления собственного инвестиционного портфеля и персональной информации,
                 а также просмотра портфелей других пользователей.
@@ -63,23 +97,25 @@
     </ROLES>
 
     <TECHSPEC>
-        <TYPE>
-
-        </TYPE>
+        <TYPE>Application</TYPE>
         <DEVTOOLS>
-            <DEV>
-
-            </DEV>
+            <DEV>Java</DEV>
+            <DEV>Kotlin</DEV>
+            <DEV>Spring Boot</DEV>
+            <DEV>Maven</DEV>
+            <DEV>JavaScript</DEV>
+            <DEV>Angular</DEV>
+            <DEV>HTML</DEV>
+            <DEV>CSS</DEV>
         </DEVTOOLS>
         <DBMS>
-            <TITLE>
-
-            </TITLE>
-            <VERSION>
-
-            </VERSION>
+            <TITLE>PostgreSQL</TITLE>
+            <VERSION>10.19</VERSION>
             <REASONING>
-
+                Широкий спектр типов данных
+                Увеличенные максимальные размеры баз, таблиц и полей по сравнению с другими СУБД
+                Поддержка check ограничений
+                Более медленный доступ к данным, но улучшенная поддержка целостности
             </REASONING>
         </DBMS>
     </TECHSPEC>

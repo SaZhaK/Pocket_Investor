@@ -1,1 +1,1 @@
-mvn spring-boot:run
+mvn spring-boot:run && cd ./frontend && npm start

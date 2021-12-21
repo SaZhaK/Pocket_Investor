@@ -12,6 +12,10 @@
 
     <artifactId>endpoint</artifactId>
 
+    <properties>
+        <start-class>edu.invest.EndpointApplication</start-class>
+    </properties>
+
     <dependencies>
         <!-- Modules -->
         <dependency>

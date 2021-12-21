@@ -1,0 +1,58 @@
+<div ng-controller="UserCtrl">
+    <div id="user_information">
+
+        <div id="user_central_block">
+            <img id="user_avatar" src="../assets/{{ avatar }}.png" alt="User avatar">
+
+            <div id="user_edit_button_div">
+                <div id="user_double_button_div">
+                    <input id="user_edit_button" ng-click="editUser()" type="image" src="../../assets/edit.png"/>
+                    <input id="logout_button" ng-click="logout()" type="image" src="../../assets/logout.png"/>
+                </div>
+            </div>
+
+            <form ng-controller="UserCtrl">
+                <div id="user_summary_div">
+                    <table id="user_summary">
+                        <tr>
+                            <td class="user_summary_label">Имя:</td>
+                            <td><input required ng-model="name" disabled="disabled" type="text" value="{{ name }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="user_summary_label">Фамилия:</td>
+                            <td><input required ng-model="surname" disabled="disabled" type="text"
+                                       value="{{ surname }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="user_summary_label">Возраст:</td>
+                            <td><input required ng-model="age" disabled="disabled" type="text" value="{{ age }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="user_summary_label">Пол:</td>
+                            <td><input required ng-model="gender" disabled="disabled" type="text" value="{{ gender }}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="user_summary_label">Образование:</td>
+                            <td><input required ng-model="education" disabled="disabled" type="text"
+                                       value="{{ education }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="user_summary_label">Статус квалицфицированного инвестора:</td>
+                            <td><input required ng-model="qualifiedInvestorStatus" disabled="disabled" type="text"
+                                       value="{{ qualifiedInvestorStatus }}"></td>
+                        </tr>
+                        <tr>
+                            <td class="user_summary_label">Дата регистрации:</td>
+                            <td style="font: bold 2vh serif; color: black; padding-left: 1vh;"> {{ registrationDate }} </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="user_save_button_div">
+                    <input id="user_save_button" ng-click="saveUser()" type="button" value="Сохранить"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  db:
+    container_name: sample_db
+    image: postgres:9.5
+    volumes:
+      - sample_db:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - backend
+    ports:
+      - 5431:5432
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: '1234'
+      POSTGRES_DB: 'pocket_investor'
+      PGDATA: /var/lib/postgresql/data/pgdata
+  backendserver:
+    build: ./
+    ports:
+      - 8080:8080
+    links:
+      - "db"
+    depends_on:
+      - "db"
+    restart: always
+    networks:
+      - backend
+      - frontend
+  frontend:
+    build: ./frontend/
+    links:
+      - "backendserver"
+    depends_on:
+      - "backendserver"
+    ports:
+      - 8000:80
+    networks:
+      - frontend
+volumes:
+  sample_db: { }
+networks:
+  frontend: null
+  backend: null

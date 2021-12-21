@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="pocketInvestor" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="pocketInvestor" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="pocketInvestor" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="pocketInvestor" class="no-js"> <!--<![endif]-->
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pocket investor</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link rel="stylesheet" href="app.css">-->
+<!--    <link rel="stylesheet" href="app/main/main.css">-->
+<!--    <link rel="stylesheet" href="app/portfolio/portfolio.css">-->
+<!--    <link rel="stylesheet" href="app/portfolioList/portfolioList.css">-->
+<!--    <link rel="stylesheet" href="app/portfolioGeneric/portfolioGeneric.css">-->
+<!--    <link rel="stylesheet" href="app/user/user.css">-->
+<!--    <link rel="stylesheet" href="app/userGeneric/userGeneric.css">-->
+<!--    <link rel="stylesheet" href="app/login/login.css">-->
+<!--    <link rel="stylesheet" href="app/callback/callback.css">-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-resource.js"></script>
+</head>
+<body>
+
+<table id="menu">
+    <tr>
+        <th>
+            <a href="#!/main">
+                <div>Главная</div>
+            </a>
+        </th>
+        <th>
+            <a href="#!/portfolioList">
+                <div>Инвестиционные идеи</div>
+            </a>
+        </th>
+        <th>
+            <a href="#!/portfolio">
+                <div>Мой портфель</div>
+            </a>
+        </th>
+        <th>
+            <a href="#!/user">
+                <div>Личный кабинет</div>
+            </a>
+        </th>
+    </tr>
+</table>
+
+<div ng-view></div>
+
+<!--<script src="scripts.js"></script>-->
+<script src="app.js"></script>
+<script src="app/login/login.js"></script>
+<script src="app/callback/callback.js"></script>
+<script src="app/home/home.js"></script>
+<script src="app/main/main.js"></script>
+<script src="app/portfolio/portfolio.js"></script>
+<script src="app/portfolioList/portfolioList.js"></script>
+<script src="app/portfolioGeneric/portfolioGeneric.js"></script>
+<script src="app/user/user.js"></script>
+<script src="app/userGeneric/userGeneric.js"></script>
+<script src="app/core/version/version.js"></script>
+<script src="app/core/version/version-directive.js"></script>
+<script src="app/core/version/interpolate-filter.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</body>
+</html>

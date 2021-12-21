@@ -1,0 +1,41 @@
+<div ng-controller="UserGenericCtrl">
+    <div id="user_information">
+
+        <div id="user_central_block">
+            <img id="user_avatar" src="../assets/{{ avatar }}.png" alt="User avatar">
+
+            <div id="user_generic_summary_div">
+                <table id="user_summary">
+                    <tr>
+                        <td class="user_summary_label">Имя:</td>
+                        <td><b>{{ name }}</b></td>
+                    </tr>
+                    <tr>
+                        <td class="user_summary_label">Фамилия:</td>
+                        <td><b>{{ surname }}</b></td>
+                    </tr>
+                    <tr>
+                        <td class="user_summary_label">Возраст:</td>
+                        <td><b>{{ age }}</b></td>
+                    </tr>
+                    <tr>
+                        <td class="user_summary_label">Пол:</td>
+                        <td><b>{{ gender }}</b></td>
+                    </tr>
+                    <tr>
+                        <td class="user_summary_label">Образование:</td>
+                        <td><b>{{ education }}</b></td>
+                    </tr>
+                    <tr>
+                        <td class="user_summary_label">Статус квалицфицированного инвестора:</td>
+                        <td><b>{{ qualifiedInvestorStatus }}</b></td>
+                    </tr>
+                    <tr>
+                        <td class="user_summary_label">Дата регистрации:</td>
+                        <td style="font: bold 2vh serif; color: black; padding-left: 1vh;"> {{ registrationDate }} </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
