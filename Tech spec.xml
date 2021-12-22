@@ -59,7 +59,7 @@
         </RELATIONSHIP>
 
         <CONSTRAINT>portfolio.id is not null and primary key</CONSTRAINT>
-        <CONSTRAINT>users.id is not nulland primary key</CONSTRAINT>
+        <CONSTRAINT>users.id is not null and primary key</CONSTRAINT>
         <CONSTRAINT>users.github_login is not null and unique</CONSTRAINT>
         <CONSTRAINT>users.portfolio_id is not null and references portfolio.id</CONSTRAINT>
         <CONSTRAINT>asset.id is not null and primary key</CONSTRAINT>
