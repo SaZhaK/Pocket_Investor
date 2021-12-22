@@ -60,8 +60,8 @@ function LoginCtrl($scope, LoginService) {
 
 angular
     .module('pocketInvestor.login', ['ngRoute'])
-    .controller('LoginCtrl', LoginCtrl)
-    .service('LoginService', LoginService)
+        .service('LoginService', LoginService)
+    .controller('LoginCtrl', ['$scope', 'LoginService', LoginCtrl])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/login', {
             templateUrl: 'app/login/login.html',

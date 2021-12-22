@@ -53,8 +53,8 @@ function logout2() {
 
 angular
     .module('pocketInvestor.home', ['ngRoute'])
-    .controller('HomeCtrl', HomeCtrl)
-    .service('HomeService', HomeService)
+        .service('HomeService', HomeService)
+    .controller('HomeCtrl', ['$scope', 'HomeService', HomeCtrl])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/home', {
             templateUrl: 'app/home/home.html',

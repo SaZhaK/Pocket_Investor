@@ -73,8 +73,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 angular
     .module('pocketInvestor.callback', ['ngRoute'])
-    .controller('CallbackCtrl', CallbackCtrl)
-    .service('CallbackService', CallbackService)
+        .service('CallbackService', CallbackService)
+    .controller('CallbackCtrl', ['$scope', 'CallbackService', CallbackCtrl])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/callback', {
             templateUrl: 'app/callback/callback.html',

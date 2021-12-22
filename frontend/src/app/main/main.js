@@ -9,8 +9,8 @@ function MainCtrl($scope, MainService) {
 
 angular
     .module('pocketInvestor.main', ['ngRoute'])
-    .controller('MainCtrl', MainCtrl)
-    .service('MainService', MainService)
+        .service('MainService', MainService)
+    .controller('MainCtrl', ['$scope', 'MainService', MainCtrl])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/main', {
             templateUrl: 'app/main/main.html',

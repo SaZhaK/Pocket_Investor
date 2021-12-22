@@ -80,8 +80,8 @@ function PortfolioListCtrl($scope, PortfolioListService) {
 
 angular
     .module('pocketInvestor.portfolioList', ['ngRoute'])
-    .controller('PortfolioListCtrl', PortfolioListCtrl)
-    .service('PortfolioListService', PortfolioListService)
+        .service('PortfolioListService', PortfolioListService)
+    .controller('PortfolioListCtrl', ['$scope', 'PortfolioListService', PortfolioListCtrl])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/portfolioList', {
             templateUrl: 'app/portfolioList/portfolioList.html',

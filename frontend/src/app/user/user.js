@@ -149,8 +149,8 @@ function UserCtrl($scope, UserService) {
 }
 
 angular.module('pocketInvestor.user', ['ngRoute'])
-    .controller('UserCtrl', UserCtrl)
     .service('UserService', UserService)
+    .controller('UserCtrl', ['$scope', 'UserService', UserCtrl])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/user', {
             templateUrl: 'app/user/user.html',

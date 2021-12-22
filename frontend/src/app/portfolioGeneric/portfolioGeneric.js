@@ -228,8 +228,8 @@ function PortfolioGenericCtrl($scope, PortfolioGenericService) {
 
 angular
     .module('pocketInvestor.portfolioGeneric', ['ngRoute'])
-    .controller('PortfolioGenericCtrl', PortfolioGenericCtrl)
-    .service('PortfolioGenericService', PortfolioGenericService)
+        .service('PortfolioGenericService', PortfolioGenericService)
+    .controller('PortfolioGenericCtrl', ['$scope', 'PortfolioGenericService', PortfolioGenericCtrl])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/portfolioGeneric', {
             templateUrl: 'app/portfolioGeneric/portfolioGeneric.html',

@@ -47,8 +47,8 @@ function UserGenericCtrl($scope, UserGenericService) {
 
 angular
     .module('pocketInvestor.userGeneric', ['ngRoute'])
-    .controller('UserGenericCtrl', UserGenericCtrl)
-    .service('UserGenericService', UserGenericService)
+        .service('UserGenericService', UserGenericService)
+    .controller('UserGenericCtrl', ['$scope', 'UserGenericService', UserGenericCtrl])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/userGeneric', {
             templateUrl: 'app/userGeneric/userGeneric.html',
