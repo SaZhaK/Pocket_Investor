@@ -33,7 +33,7 @@ class AssetService @Autowired constructor(
                 queue.add(ticker)
             }
             return result.lastPrice
-        } else if (assetOptionalFromDb.isEmpty && queue.isEmpty()) {
+        } else if (assetOptionalFromDb.isEmpty() && queue.isEmpty()) {
             return try {
                 val price = assetUtil.getCurrentPrice(ticker)
                 val assetDto = AssetDto(
@@ -49,7 +49,7 @@ class AssetService @Autowired constructor(
                 }
                 null
             }
-        } else if (assetOptionalFromDb.isEmpty && queue.isNotEmpty()) {
+        } else if (assetOptionalFromDb.isEmpty() && queue.isNotEmpty()) {
             if (!queue.contains(ticker)) {
                 queue.add(ticker)
             }

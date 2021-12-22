@@ -18,7 +18,7 @@ class TradeService @Autowired constructor(
         val trade = tradeMapper.mapToEntity(tradeDto)
 
         val assetOptional = assetRepository.findByTicker(trade.asset!!.ticker!!)
-        if (assetOptional.isEmpty) {
+        if (assetOptional.isEmpty()) {
             assetRepository.save(trade.asset!!)
         } else {
             trade.asset = assetOptional.get()
