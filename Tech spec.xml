@@ -68,7 +68,6 @@
         <CONSTRAINT>asset.last_time is not null</CONSTRAINT>
         <CONSTRAINT>trade.id is not null and primary key</CONSTRAINT>
         <CONSTRAINT>trade.asset_id is not null and references asset.id</CONSTRAINT>
-        <CONSTRAINT>trade.asset_id is not null and references asset.id</CONSTRAINT>
         <CONSTRAINT>trade.amount is > 0</CONSTRAINT>
         <CONSTRAINT>trade.price is > 0</CONSTRAINT>
         <CONSTRAINT>portfolio_trades.portfolio_id is not null and references portfolio.id</CONSTRAINT>
